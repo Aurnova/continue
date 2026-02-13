@@ -8,7 +8,17 @@
 
 ## 1. Open in Codespace
 
-Use the **Open in GitHub Codespaces** link above, or **Code** → **Codespaces** → **Create codespace on main**. Continue is installed automatically.
+Use the **Open in GitHub Codespaces** link above, or **Code** → **Codespaces** → **Create codespace on main**. Continue is installed automatically when the codespace builds from the devcontainer.
+
+**If Continue isn’t there** (e.g. you opened the codespace before the devcontainer existed): **Command Palette** (`Ctrl+Shift+P` / `Cmd+Shift+P`) → **Codespaces: Rebuild Container**. After the rebuild, the extension will be installed.
+
+**Faster startup (prebuilds):** To make every student’s codespace start in seconds instead of 1–2 minutes, an org admin can enable prebuilds:
+
+1. Repo **Settings** → **Code & automation** → **Codespaces**.
+2. Under **Prebuild configuration**, click **Set up prebuild**.
+3. Choose branch **main**, config file **.devcontainer/devcontainer.json**.
+4. Trigger: **Every push** (or **On configuration change** to use fewer Actions minutes).
+5. Click **Create**. The first prebuild will run in Actions; after it completes, new codespaces use it automatically.
 
 ## 2. Chat
 
