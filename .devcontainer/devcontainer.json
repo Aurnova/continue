@@ -4,18 +4,17 @@
   "features": {},
   "customizations": {
     "vscode": {
-      "extensions": [
-        "Continue.continue"
-      ],
+      "extensions": ["Continue.continue"],
       "settings": {
         "workbench.startupEditor": "none",
+        "workbench.activityBar.visible": true,
         "continue.telemetryEnabled": false,
-        "github.copilot.enable": {
-          "*": false
-        },
+        "github.copilot.enable": { "*": false },
         "github.copilot.chat.enabled": false
       }
     }
   },
+  "postCreateCommand": "mkdir -p ${HOME}/.continue && (cp -f ${containerWorkspaceFolder}/.continue/config.json ${HOME}/.continue/config.json || cp -f .continue/config.json ${HOME}/.continue/config.json) 2>/dev/null || true",
+  "postStartCommand": "command -v code >/dev/null 2>&1 && (code --uninstall-extension GitHub.copilot --force; code --uninstall-extension GitHub.copilot-chat --force) 2>/dev/null || true",
   "forwardPorts": []
 }

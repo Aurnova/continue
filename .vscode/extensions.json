@@ -1,5 +1,4 @@
 {
-  "recommendations": [
-    "Continue.continue"
-  ]
+  "recommendations": ["Continue.continue"],
+  "unwantedRecommendations": ["GitHub.copilot", "GitHub.copilot-chat"]
 }

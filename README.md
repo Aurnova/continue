@@ -10,7 +10,7 @@
 
 Use the **Open in GitHub Codespaces** link above, or **Code** → **Codespaces** → **Create codespace on main**. Continue is installed automatically.
 
-**If Continue isn’t there:** **Command Palette** (`Ctrl+Shift+P` / `Cmd+Shift+P`) → **Codespaces: Rebuild Container**.
+**If Continue isn’t set up or Copilot still appears:** **Command Palette** (`Ctrl+Shift+P` / `Cmd+Shift+P`) → **Codespaces: Rebuild Container**. The devcontainer copies the baked-in config into the container and uninstalls Copilot.
 
 **Faster startup (prebuilds):** An org admin can enable prebuilds so each student’s codespace starts in seconds: repo **Settings** → **Codespaces** → **Set up prebuild** (branch **main**, config **.devcontainer/devcontainer.json**).
 
