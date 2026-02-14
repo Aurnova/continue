@@ -3,7 +3,7 @@
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
   "features": {},
   "containerEnv": {
-    "CONTINUE_GLOBAL_DIR": "/home/codespace/.continue"
+    "CONTINUE_GLOBAL_DIR": "/home/vscode/.continue"
   },
   "customizations": {
     "vscode": {

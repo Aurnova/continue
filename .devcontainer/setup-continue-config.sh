@@ -41,6 +41,14 @@ with open(p, 'w') as f: f.write(content)
 "
       fi
     fi
+    # Copy to other possible home dirs so Continue finds config (vscode vs codespace user)
+    for alt_home in /home/vscode /home/codespace; do
+      [ "$alt_home" = "$HOME" ] && continue
+      [ ! -d "$alt_home" ] && continue
+      mkdir -p "$alt_home/.continue"
+      [ -f "${HOME}/.continue/config.json" ] && cp -f "${HOME}/.continue/config.json" "$alt_home/.continue/"
+      [ -f "${HOME}/.continue/config.yaml" ] && cp -f "${HOME}/.continue/config.yaml" "$alt_home/.continue/"
+    done 2>/dev/null || true
     echo "Continue config written to ${HOME}/.continue (sync-safe)"
     exit 0
   fi

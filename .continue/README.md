@@ -1,16 +1,10 @@
 # Continue configuration
 
-This folder holds the Continue extension config used in the devcontainer and can be copied to `~/.continue` by the setup script. Continue prefers **config.yaml** (we provide both YAML and JSON).
+**In the repo:** This folder (`.continue/`) is the **template only**. `config.json` and `config.yaml` have empty `apiKey` on purpose—we never commit keys.
 
-## Model and API key
+**In the codespace:** Continue reads from **`~/.continue`** (e.g. `/home/codespace/.continue`). The setup script copies these files there and injects your `OPENROUTER_API_KEY` from Codespaces secrets. So the key exists only in `~/.continue/config.json` and `~/.continue/config.yaml`, not in the workspace `.continue/` folder.
 
-- **Model**: `qwen/qwen3-coder-next` (OpenRouter).
-- **API key**: Set in `config.yaml` or `config.json` (setup script injects from `OPENROUTER_API_KEY` in Codespaces).
+- **Model**: `qwen/qwen3-coder-next` (OpenRouter), via provider `openai` + `apiBase: https://openrouter.ai/api/v1`.
+- **API key**: Set `OPENROUTER_API_KEY` in GitHub → Settings → Codespaces → Secrets. Then in the codespace run `bash .devcontainer/setup-continue-config.sh` (and rebuild if needed). To confirm the key is present: `grep -q apiKey ~/.continue/config.json && echo "Key is set"` (does not print the key).
 
-1. Get an API key from [OpenRouter](https://openrouter.ai/keys).
-2. Open `.continue/config.json` and set `"apiKey": ""` to your key, e.g. `"apiKey": "sk-or-v1-..."`.
-
-Keep API keys out of version control. You can:
-
-- **Devcontainer**: Set `OPENROUTER_API_KEY` in the devcontainer (e.g. in `devcontainer.json` under `containerEnv`, or in GitHub Codespaces secrets). The setup script will inject it into the copied config so you never commit the key.
-- **Local**: Edit `~/.continue/config.json` (or `.continue/config.json` in the repo) and set `apiKey` there.
+**Local (no Codespaces):** Edit `~/.continue/config.json` or `config.yaml` and set `apiKey` there.
