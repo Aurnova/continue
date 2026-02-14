@@ -21,8 +21,10 @@ Continue needs your OpenRouter API key so it can use the model. **No key = “Mo
 3. In the codespace: **Command Palette** (`Ctrl+Shift+P` / `Cmd+Shift+P`) → **Codespaces: Rebuild Container**. After the rebuild, run **Developer: Reload Window**. Continue will then see the key and the model.
 
    **Still seeing "Models Add-On"?** In the terminal, from the workspace root run:
-`cd /workspaces/continue && bash .devcontainer/setup-continue-config.sh`
-(If your workspace path is different, `cd` to the folder that contains `.devcontainer` first.) Then **Developer: Reload Window**.
+   `cd /workspaces/continue && bash .devcontainer/setup-continue-config.sh`
+   (If your workspace path is different, `cd` to the folder that contains `.devcontainer` first.) Then **Developer: Reload Window**.
+
+   **"502 Failed to authenticate request with Clerk"?** That can happen if your key isn’t in the config or requests go through Continue’s backend. Ensure `OPENROUTER_API_KEY` is set as a Codespaces secret, run the setup script above, then **Developer: Reload Window**. The config uses `apiBase: https://openrouter.ai/api/v1` so requests go directly to OpenRouter.
 
 **If Copilot still appears:** Rebuild again; the devcontainer also runs a script to uninstall Copilot (works for both VS Code and Cursor).
 

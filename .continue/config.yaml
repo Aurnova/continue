@@ -5,6 +5,7 @@ models:
   - name: Qwen3 Coder Next
     provider: openrouter
     model: qwen/qwen3-coder-next
+    apiBase: https://openrouter.ai/api/v1
     apiKey: ""
     roles:
       - chat
@@ -13,6 +14,7 @@ models:
   - name: Qwen3 Coder Next (autocomplete)
     provider: openrouter
     model: qwen/qwen3-coder-next
+    apiBase: https://openrouter.ai/api/v1
     apiKey: ""
     roles:
       - autocomplete
