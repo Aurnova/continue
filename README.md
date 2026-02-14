@@ -24,7 +24,7 @@ Continue needs your OpenRouter API key so it can use the model. **No key = “Mo
    `cd /workspaces/continue && bash .devcontainer/setup-continue-config.sh`
    (If your workspace path is different, `cd` to the folder that contains `.devcontainer` first.) Then **Developer: Reload Window**.
 
-   **"502 Failed to authenticate request with Clerk"?** That can happen if your key isn’t in the config or requests go through Continue’s backend. Ensure `OPENROUTER_API_KEY` is set as a Codespaces secret, run the setup script above, then **Developer: Reload Window**. The config uses `apiBase: https://openrouter.ai/api/v1` so requests go directly to OpenRouter.
+   **"502 Failed to authenticate request with Clerk"?** That can happen if your key isn’t in the config or requests go through Continue’s backend. Ensure `OPENROUTER_API_KEY` is set as a Codespaces secret, run the setup script above, then **Codespaces: Rebuild Container** and **Developer: Reload Window**. The config sets `apiBase` and `requestOptions.headers.Authorization` so your key is sent directly to OpenRouter. If 502 persists, see [Continue OpenRouter issues](https://github.com/continuedev/continue/issues?q=openrouter).
 
 **If Copilot still appears:** Rebuild again; the devcontainer also runs a script to uninstall Copilot (works for both VS Code and Cursor).
 

@@ -3,7 +3,7 @@
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
   "features": {},
   "containerEnv": {
-    "CONTINUE_GLOBAL_DIR": "${containerWorkspaceFolder}/.continue"
+    "CONTINUE_GLOBAL_DIR": "/home/codespace/.continue"
   },
   "customizations": {
     "vscode": {
@@ -18,7 +18,9 @@
           "*": false
         },
         "github.copilot.chat.enabled": false,
-        "extensions.ignoreRecommendations": true
+        "extensions.ignoreRecommendations": true,
+        "github.copilot.editor.enableCodeActions": false,
+        "github.copilot.nextEditSuggestions.enabled": false
       }
     }
   },

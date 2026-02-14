@@ -1,7 +1,8 @@
 # You're all set
 
 - **Continue** uses **Qwen3 Coder Next** (OpenRouter). **Copilot** is disabled and uninstalled in this devcontainer.
-- The layout is **Continue only**—no Copilot in the sidebar.
+- The layout is **Continue only**—no Copilot in the sidebar. If Copilot still appears (e.g. in the browser), open **Extensions** (Ctrl+Shift+X), search for "Copilot", and click **Uninstall**.
+- **Config is stored in your home directory** (`~/.continue`) so Settings Sync and git don’t overwrite your model/key. If the model disappears after a sync, run `bash .devcontainer/setup-continue-config.sh` and **Developer: Reload Window**.
 
 **To chat:** click **Continue** in the left sidebar, or press **Ctrl+L** (Mac: **Cmd+L**).
 

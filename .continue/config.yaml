@@ -7,6 +7,9 @@ models:
     model: qwen/qwen3-coder-next
     apiBase: https://openrouter.ai/api/v1
     apiKey: ""
+    requestOptions:
+      headers:
+        Authorization: "Bearer "
     roles:
       - chat
       - edit
@@ -16,5 +19,8 @@ models:
     model: qwen/qwen3-coder-next
     apiBase: https://openrouter.ai/api/v1
     apiKey: ""
+    requestOptions:
+      headers:
+        Authorization: "Bearer "
     roles:
       - autocomplete
