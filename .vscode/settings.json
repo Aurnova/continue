@@ -1,6 +1,9 @@
 {
-  "workbench.startupEditor": "none",
+  "workbench.startupEditor": "readme",
   "workbench.panel.defaultLocation": "bottom",
-  "github.copilot.enable": { "*": false },
-  "github.copilot.chat.enabled": false
+  "github.copilot.enable": {
+    "*": false
+  },
+  "github.copilot.chat.enabled": false,
+  "extensions.ignoreRecommendations": true
 }

@@ -4,13 +4,13 @@
       "title": "Qwen3 Coder Next",
       "provider": "openrouter",
       "model": "qwen/qwen3-coder-next",
-      "apiKey": "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"
+      "apiKey": ""
     }
   ],
   "tabAutocompleteModel": {
     "title": "Qwen3 Coder Next",
     "provider": "openrouter",
     "model": "qwen/qwen3-coder-next",
-    "apiKey": "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"
+    "apiKey": ""
   }
 }

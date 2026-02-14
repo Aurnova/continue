@@ -7,19 +7,24 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": ["Continue.continue"],
+      "extensions": [
+        "Continue.continue"
+      ],
       "settings": {
-        "workbench.startupEditor": "none",
+        "workbench.startupEditor": "readme",
         "workbench.activityBar.visible": true,
         "continue.telemetryEnabled": false,
-        "github.copilot.enable": { "*": false },
-        "github.copilot.chat.enabled": false
+        "github.copilot.enable": {
+          "*": false
+        },
+        "github.copilot.chat.enabled": false,
+        "extensions.ignoreRecommendations": true
       }
     }
   },
   "updateContentCommand": "bash .devcontainer/setup-continue-config.sh || true",
-  "postCreateCommand": "bash .devcontainer/setup-continue-config.sh || true",
-  "postAttachCommand": "bash .devcontainer/setup-continue-config.sh || true",
-  "postStartCommand": "command -v code >/dev/null 2>&1 && (code --uninstall-extension GitHub.copilot --force; code --uninstall-extension GitHub.copilot-chat --force) 2>/dev/null || true",
+  "postCreateCommand": "bash .devcontainer/setup-continue-config.sh || true; bash .devcontainer/disable-copilot.sh || true",
+  "postAttachCommand": "bash .devcontainer/setup-continue-config.sh || true; bash .devcontainer/disable-copilot.sh || true",
+  "postStartCommand": "bash .devcontainer/setup-continue-config.sh || true; bash .devcontainer/disable-copilot.sh || true",
   "forwardPorts": []
 }
