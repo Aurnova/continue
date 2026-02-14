@@ -1,9 +1,10 @@
 name: Continue + OpenRouter
 version: 0.0.1
 schema: v1
+# Use provider: openai with OpenRouter's API URL to avoid 502 Clerk (extension may proxy "openrouter" through backend)
 models:
   - name: Qwen3 Coder Next
-    provider: openrouter
+    provider: openai
     model: qwen/qwen3-coder-next
     apiBase: https://openrouter.ai/api/v1
     apiKey: ""
@@ -15,7 +16,7 @@ models:
       - edit
       - apply
   - name: Qwen3 Coder Next (autocomplete)
-    provider: openrouter
+    provider: openai
     model: qwen/qwen3-coder-next
     apiBase: https://openrouter.ai/api/v1
     apiKey: ""
